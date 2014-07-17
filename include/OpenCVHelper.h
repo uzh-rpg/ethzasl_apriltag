@@ -32,11 +32,11 @@
 
 //slynen{
 #if (CV_MAJOR_VERSION==2 && CV_MINOR_VERSION==3 && CV_SUBMINOR_VERSION>=3) || (CV_MAJOR_VERSION==2 && CV_MINOR_VERSION>3) || (CV_MAJOR_VERSION>2)
-#include "opencv2/nonfree/nonfree.hpp"
+//#include "opencv2/nonfree/nonfree.hpp"
 #include "opencv2/legacy/legacy.hpp"
-#include "opencv2/nonfree/nonfree.hpp"
+//#include "opencv2/nonfree/nonfree.hpp"
 #include "opencv2/legacy/legacy.hpp"
-#include <opencv2/nonfree/features2d.hpp>
+//#include <opencv2/nonfree/features2d.hpp>
 #else
 #include <opencv2/features2d/features2d.h>
 //}
