@@ -58,6 +58,7 @@
 #include "OpenCVHelper.h"
 #include "Log.h"
 
+#include "TagFamily.hpp"
 #include "TagUtils.hpp"
 
 #ifndef TAG_DEBUG_DRAW
