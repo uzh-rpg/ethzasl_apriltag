@@ -70,12 +70,12 @@ namespace april
 namespace tag
 {
 
-inline double distance(double x1, double y1, double x2, double y2)
+inline double distance(const double x1, const double y1, const double x2, const double y2)
 {
 	return sqrt( (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2) );
 }
 
-inline double distance(double p1[2], double p2[2])
+inline double distance(const double p1[2], const double p2[2])
 {
 	return distance(p1[0],p1[1], p2[0],p2[1]);
 }
@@ -101,7 +101,7 @@ inline double lineCoordinate(double x, double y, double dx, double dy)
 //return {vx,vy,x0,y0}
 //where [vx,vy] is unit direction vector
 //and [x0,y0] is closest to origin
-inline cv::Vec4d wlsq2D(std::vector<cv::Vec3d>& xyw)
+inline cv::Vec4d wlsq2D(const std::vector<cv::Vec3d>& xyw)
 {
 	double Cxx=0, Cyy=0, Cxy=0, Ex=0, Ey=0, mXX=0, mYY=0, mXY=0, mX=0, mY=0;
 	double n=0;
@@ -154,7 +154,7 @@ struct Segment {
 	//modified from april.jmat.geom.GLineSegment2D
 	//return {x1,y1,x2,y2}
 	//so line segment is [x1,y1]<-->[x2,y2]
-	inline void fitBy(std::vector<cv::Vec3d>& xyw) {
+	void fitBy(const std::vector<cv::Vec3d>& xyw) {
 		cv::Vec4d line = wlsq2D(xyw);
 
 		double dx=line[0], dy=line[1], xp=line[2], yp=line[3];
@@ -172,7 +172,7 @@ struct Segment {
 		length = maxcoord - mincoord;
 	}
 
-	inline bool intersectionWith(const Segment &s, double &xo, double &yo) {
+	inline bool intersectionWith(const Segment &s, double &xo, double &yo) const {
 		// this implementation is many times faster than the original,
 		// mostly due to avoiding a general-purpose LU decomposition in
 		// Matrix.inverse().

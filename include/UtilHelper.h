@@ -107,7 +107,7 @@ std::string num2bits(T val)
 	return std::string(rret.rbegin(), rret.rend());
 }
 
-#define CV_2_PI (CV_PI*2)
+constexpr double CV_2_PI = (CV_PI*2);
 //ensure val lies within (-PI,PI]
 //inline double mod2pi_pos(double vin)
 //{
@@ -129,10 +129,10 @@ std::string num2bits(T val)
 //	return v;
 //}
 
-#define INV_2_PI (0.5/CV_PI)
-inline double mod2pi(double val)
+constexpr double INV_2_PI = (0.5/CV_PI);
+inline double mod2pi(const double val)
 {
-	int n = (int)floor(0.5-val*INV_2_PI);
+	const int n = floor(0.5-val*INV_2_PI);
 	return val+n*CV_2_PI;
 }
 
