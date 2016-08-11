@@ -246,7 +246,7 @@ struct TagDetector {
 	 **/
 	static void countingSortLongArray(vector<INT64>& v, int vlength, int maxv, INT64 mask) {
 	  std::sort(v.begin(), v.begin() + vlength, [mask](const INT64 a, const INT64 b) {
-	    return a&mask > b&mask;
+	    return (a&mask) > (b&mask);
 	  });
 	}
 
