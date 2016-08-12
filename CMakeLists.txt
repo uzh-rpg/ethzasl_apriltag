@@ -20,6 +20,8 @@ generate_dynamic_reconfigure_options(
 find_package(OpenCV REQUIRED)
 find_package(Eigen3 REQUIRED)
 
+add_definitions(-std=c++11)
+
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}

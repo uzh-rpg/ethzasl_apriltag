@@ -59,10 +59,11 @@ struct UnionFind {
 	}
 
 	inline int Find(int id) {
-		if( parent[id]==id ) {
-			return id;
-		}
-		return parent[id] = Find(parent[id]); //path compression
+	  parent[id] = parent[parent[id]]; // cheap incomplete path compression
+	  while (parent[id] != id) {
+	    id = parent[id];
+	  }
+	  return id;
 	}
 
 	inline int Union(int xid, int yid) {
