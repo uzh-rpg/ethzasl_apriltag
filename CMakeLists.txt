@@ -17,7 +17,7 @@ generate_dynamic_reconfigure_options(
   cfg/ethzasl_apriltagParams.cfg
 )
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 3 REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 add_definitions(-std=c++11)

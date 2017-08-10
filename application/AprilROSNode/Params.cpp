@@ -70,7 +70,7 @@ void FixParams::readFixParams()
 				" "<<it->second.transform.getRotation().getZ()<<std::endl;
 	}
 	ss<<"------------------"<<std::endl;
-	ROS_INFO_STREAM(ss);
+  ROS_INFO_STREAM(ss.str());
 }
 ;
 
